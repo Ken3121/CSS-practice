@@ -1,0 +1,83 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: rgb(46, 41, 41);
+    display: flex;
+    justify-content: center;
+}
+
+.neon {
+    color: fuchsia;
+    font-family: sans-serif;
+    font-size: 3rem;
+    margin: 2rem;
+    border: solid fuchsia .125em;
+    border-radius: 0.35em;
+    padding: 0.25em;
+    width: 4em;
+    text-align: center;
+
+    text-shadow: 0 0 .125em hsl(0 0% 100%/65%),
+                 0 0 .75em fuchsia;
+
+    box-shadow: 0 0 .45em fuchsia, inset 0 0 .35em fuchsia;
+    position: relative;
+}
+
+.neon::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: fuchsia;
+    top: 2.25em;
+    left: 0em;
+    
+    transform: perspective(2em) rotateX(30deg)
+    scale(1, 0.5);
+
+    filter: blur(2em);
+    opacity: 0.8;
+}
+
+.neon:hover {
+    background-color: fuchsia;
+    color: hsl(0, 0%, 100%);
+    font-family: sans-serif;
+    font-size: 3rem;
+    margin: 2rem;
+    border: solid fuchsia .125em;
+    border-radius: 0.35em;
+    padding: 0.25em;
+    width: 4em;
+    text-align: center;
+
+    text-shadow: 0 0 0.5em hsl(0 0% 100%);
+             
+
+    box-shadow: 0 0 .75em fuchsia, inset 0 0 .35em fuchsia;
+    position: relative;
+}
+
+.neon::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: fuchsia;
+    top: 2.25em;
+    left: 0em;
+    
+    transform: perspective(2em) rotateX(30deg)
+    scale(1, 0.5);
+
+    filter: blur(1em);
+    opacity: 0;
+}
+
+.neon:hover::after {
+    opacity: 1;
+}
